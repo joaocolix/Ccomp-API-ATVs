@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "API Livros - UniFil",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros"]
+        }
+      }
+    },
+    {
+      "name": "Listar com filtros",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros?genero=Tecnologia&preco_max=100&ordenar=preco&direcao=asc&pagina=1&limite=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros"],
+          "query": [
+            {"key": "genero", "value": "Tecnologia"},
+            {"key": "preco_max", "value": "100"},
+            {"key": "ordenar", "value": "preco"},
+            {"key": "direcao", "value": "asc"},
+            {"key": "pagina", "value": "1"},
+            {"key": "limite", "value": "5"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros", "1"]
+        }
+      }
+    },
+    {
+      "name": "Criar livro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Entendendo APIs REST\",\n  \"autor\": \"Levi Santos\",\n  \"genero\": \"Tecnologia\",\n  \"preco\": 59.9,\n  \"estoque\": 15,\n  \"ano_publicacao\": 2026\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/livros",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros"]
+        }
+      }
+    },
+    {
+      "name": "Atualizar livro",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Clean Code - Edição Revisada\",\n  \"autor\": \"Robert C. Martin\",\n  \"genero\": \"Tecnologia\",\n  \"preco\": 129.9,\n  \"estoque\": 10,\n  \"ano_publicacao\": 2008\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/livros/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros", "1"]
+        }
+      }
+    },
+    {
+      "name": "Deletar livro",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/livros/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "livros", "1"]
+        }
+      }
+    }
+  ]
+}

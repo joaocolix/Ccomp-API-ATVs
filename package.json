@@ -1,0 +1,13 @@
+{
+  "name": "api-livros-unifil",
+  "version": "1.0.0",
+  "description": "API REST CRUD com SQLite para as atividades de Desenvolvimento de Aplicativos Móveis",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2"
+  }
+}
